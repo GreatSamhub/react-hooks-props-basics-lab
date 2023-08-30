@@ -1,14 +1,22 @@
 import React from "react";
 
-function About() {
+function About(props) {
+  if (!props.bio){
+    return (  
+      <div id="about">
+      <h2>About Me</h2>
+      <img src= "https://i.imgur.com/mV8PQxj.gif" alt="I made this" />
+    </div>
+    ) 
+  }else {
   return (
     <div id="about">
       <h2>About Me</h2>
-      <p>Put the bio in here</p>
-      <img src="https://i.imgur.com/mV8PQxj.gif" alt="I made this" />
-      {/* add your <Links /> component here */}
+      <p>{props.bio}</p>
+      <img src= "https://i.imgur.com/mV8PQxj.gif" alt="I made this" />
     </div>
   );
+  }
 }
 
 export default About;
